@@ -2,8 +2,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS	= ft_printf.c ft_itoa.c ft_print_ptr.c ft_printnbr.c ft_printstr.c \
-		  ft_putchar.c ft_lastfunc.c
+SRCS	= ft_printf.c utils_p_flag.c utils_put.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -16,6 +15,7 @@ all : ${NAME}
 
 debug:
 	$(CC) -g -o ft_printf $(SRCS) 
+
 clean :
 	rm -f ${OBJS}
 

@@ -1,43 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   utils_put.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 10:29:40 by yaysu             #+#    #+#             */
-/*   Updated: 2022/01/19 13:51:26 by yaysu            ###   ########.fr       */
+/*   Created: 2022/02/06 11:11:41 by yaysu             #+#    #+#             */
+/*   Updated: 2022/02/06 11:43:18 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
-void	ft_putstr(char *str)
+int	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
+	return(write(1, &c, 1));
 }
 
-int	ft_printstr(char *str)
+int	ft_putstr(char *s)
 {
 	int	i;
+	int	len;
 
 	i = 0;
-	if (str == NULL)
+	len = 0;
+	if(s == NULL)
 	{
 		ft_putstr("(null)");
 		return (6);
 	}
-	while (str[i])
+	if (s)
 	{
-		write(1, &str[i], 1);
-		i++;
+		while(s[i] != '\0')
+		{
+			len += ft_putchar(s[i]);
+			i++;
+		}
 	}
-	return (i);
+	return(len);
+}
+
+int ft_putnbr(long n, int *len)
+{
+	if(n < 0)
+	{
+		n *= -1;
+		*len += ft_putchar('-');
+	}
+	if (n)
+	{
+		if (n / 10)
+			ft_putnbr (n/10, len);
+		*len += ft_putchar (n % 10 + '0');
+	}
+	else 
+		*len += ft_putchar('0');
+	return(*len);
 }

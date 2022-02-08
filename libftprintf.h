@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 14:10:42 by yaysu             #+#    #+#             */
-/*   Updated: 2022/01/19 15:10:35 by yaysu            ###   ########.fr       */
+/*   Created: 2022/02/06 10:52:13 by yaysu             #+#    #+#             */
+/*   Updated: 2022/02/08 15:37:33 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 int		ft_printf(const char *str, ...);
-int		ft_putchar(int c);
-void	ft_putstr(char *str);
-int		ft_printstr(char *str);
-char	*ft_itoa(int n);
-int		ft_print(int n);
-int		ft_print_yuzde(void);
-int		ft_lastfunc(va_list args, const char format);
-int		ft_printnbr(int n);
+int		ft_putchar(char c);
+int		ft_putnbr(long n, int *len);
+int		ft_putstr(char *s);
+int		p_func(unsigned long long dec);
+size_t	ft_strlen(const char *s);
+char	*add_0x(char *str);
+char	*ft_strrev(char *str);
+char	*convert_16(unsigned long long dec);
+int		p_flag(unsigned long long dec);
+char	*convert_16x(long long dec);
 
 #endif

@@ -5,33 +5,85 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 14:15:49 by yaysu             #+#    #+#             */
-/*   Updated: 2022/01/21 17:42:36 by yaysu            ###   ########.fr       */
+/*   Created: 2022/02/06 10:28:33 by yaysu             #+#    #+#             */
+/*   Updated: 2022/02/08 15:55:16 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
-int	ft_printf(const char *str, ...)
+int	flag_func(const char *str, va_list *format, size_t i)
 {
-	va_list	args;
-	int		i;
-	int		print_length;
+	int len;
+	len = 0;
+	if(str[i] == '%')
+	{
+		len = ft_putchar('%');
+	}
+	else if(str[i] == 'c')
+	{
+		len = ft_putchar(va_arg(*format, int));
+	}
+	else if(str[i] == 's')
+	{
+		len = ft_putstr(va_arg(*format, char*));
+	}
+	else if(str[i] == 'd' || str[i] == 'i')
+	{
+		len = ft_putnbr(va_arg(*format,int), &len);
+	}
+	else if (str[i] == 'p')
+	{
+		len = ft_putstr(convert_16(va_arg(*format, unsigned long long)));
+	}
+	else if (str[i] == 'u')
+	{
 
+	}
+	else if (str[i] == 'x')
+	{
+		len = ft_putstr(convert_16x(va_arg(*format, unsigned long long)));
+	}
+	else if (str[i] == 'X')
+	{
+
+	}
+	return (len);
+}
+
+int ft_printf(const char *str, ...)
+{
+	size_t	i;
+	int		len;
+	va_list format;
+
+	va_start(format, str);
 	i = 0;
-	print_length = 0;
-	va_start(args, str);
-	while (str[i])
+	len = 0;
+
+	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
 		{
-			print_length += ft_lastfunc(args, str[i + 1]);
 			i++;
-		}
+			len += flag_func(str, &format, i);
+		} 
 		else
-			print_length += ft_putchar(str[i]);
+		{
+			write(1, &(str[i]), 1);
+			len++;
+		}
 		i++;
 	}
-	va_end(args);
-	return (print_length);
+	va_end(format);
+	return (len);
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	int a = 198098;
+	printf("%x\n",a);
+	ft_printf("%x",a);
 }
