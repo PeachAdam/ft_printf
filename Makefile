@@ -2,7 +2,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS	= ft_printf.c utils_p_flag.c utils_put.c
+SRCS	= ft_printf.c utils_p_flag.c utils_x_flag.c utils_put.c
 
 OBJS	= ${SRCS:.c=.o}
 

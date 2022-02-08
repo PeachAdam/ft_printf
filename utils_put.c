@@ -6,7 +6,7 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 11:11:41 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/06 11:43:18 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/08 21:28:27 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,19 @@ int ft_putnbr(long n, int *len)
 		*len += ft_putchar (n % 10 + '0');
 	}
 	else 
+		*len += ft_putchar('0');
+	return(*len);
+}
+
+int	ft_putunbr(long n, int *len)
+{
+	if (n)
+	{
+		if (n / 10)
+			ft_putnbr(n/10, len);
+		*len += ft_putchar(n % 10 + '0');
+	}
+	else
 		*len += ft_putchar('0');
 	return(*len);
 }

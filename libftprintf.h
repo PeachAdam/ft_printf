@@ -6,7 +6,7 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 10:52:13 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/08 15:37:33 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/08 21:31:07 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strrev(char *str);
 char	*convert_16(unsigned long long dec);
 int		p_flag(unsigned long long dec);
 char	*convert_16x(long long dec);
-
+char	*convert_16x_upper(long long dec);
+int		ft_putunbr(long n, int *len);
 #endif

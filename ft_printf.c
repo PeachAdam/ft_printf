@@ -6,7 +6,7 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 10:28:33 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/08 15:55:16 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/08 21:32:45 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	flag_func(const char *str, va_list *format, size_t i)
 	}
 	else if (str[i] == 'u')
 	{
-
+		len = ft_putunbr(va_arg(*format, int), &len);
 	}
 	else if (str[i] == 'x')
 	{
@@ -46,7 +46,7 @@ int	flag_func(const char *str, va_list *format, size_t i)
 	}
 	else if (str[i] == 'X')
 	{
-
+		len = ft_putstr(convert_16x_upper(va_arg(*format, unsigned long long)));
 	}
 	return (len);
 }
@@ -77,13 +77,4 @@ int ft_printf(const char *str, ...)
 	}
 	va_end(format);
 	return (len);
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-	int a = 198098;
-	printf("%x\n",a);
-	ft_printf("%x",a);
 }
