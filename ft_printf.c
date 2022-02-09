@@ -6,11 +6,11 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 10:28:33 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/08 21:32:45 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/09 15:53:36 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	flag_func(const char *str, va_list *format, size_t i)
 {

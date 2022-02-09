@@ -6,11 +6,11 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 11:11:41 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/08 21:28:27 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/09 15:54:17 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {

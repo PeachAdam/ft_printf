@@ -6,14 +6,11 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 10:52:13 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/08 21:39:47 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/09 15:53:58 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-#include <stdlib.h>
-#include <stdio.h>
+#include "ft_printf.h"
 
 size_t ft_strlen(const char *s)
 {

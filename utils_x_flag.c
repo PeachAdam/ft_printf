@@ -6,11 +6,11 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:27:41 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/08 21:07:14 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/09 15:54:31 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 char *convert_16x(long long dec)
 {
