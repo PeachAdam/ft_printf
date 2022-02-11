@@ -6,7 +6,7 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 10:52:13 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/09 15:53:58 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/11 10:16:47 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char *ft_strrev(char *str)
 		str[(ft_strlen(str) - 1) - i] = tmp;
         i++;
     }
+    str[ft_strlen(str)] = '\0';
 	return(str);
 }
 

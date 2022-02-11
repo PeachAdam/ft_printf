@@ -6,13 +6,13 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:27:41 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/09 15:54:31 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/11 12:53:04 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char *convert_16x(long long dec)
+char *convert_16x(unsigned int dec)
 {
 	int		i;
 	int		kalan;
@@ -37,7 +37,7 @@ char *convert_16x(long long dec)
 	return(str);
 }
 
-char	 *convert_16x_upper(long long dec)
+char	 *convert_16x_upper(unsigned int dec)
 {
 	int		i;
 	int		kalan;

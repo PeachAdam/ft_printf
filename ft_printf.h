@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 10:52:13 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/08 21:31:07 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/02/11 12:53:36 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef PRINTF_H
+# define PRINTF_H
 
 #include <stdarg.h>
 #include <unistd.h>
@@ -27,7 +27,9 @@ char	*add_0x(char *str);
 char	*ft_strrev(char *str);
 char	*convert_16(unsigned long long dec);
 int		p_flag(unsigned long long dec);
-char	*convert_16x(long long dec);
-char	*convert_16x_upper(long long dec);
-int		ft_putunbr(long n, int *len);
+char	*convert_16x(unsigned int dec);
+char	*convert_16x_upper(unsigned int dec);
+int		ft_putunbr(unsigned int n, int *len);
+int		ft_putstr_free(char *s);
+
 #endif
