@@ -6,16 +6,16 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 10:52:13 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/11 12:53:36 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/03/01 15:57:54 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 int		ft_printf(const char *str, ...);
 int		ft_putchar(char c);
@@ -31,5 +31,6 @@ char	*convert_16x(unsigned int dec);
 char	*convert_16x_upper(unsigned int dec);
 int		ft_putunbr(unsigned int n, int *len);
 int		ft_putstr_free(char *s);
+void	empty_malloc(char *str);
 
 #endif

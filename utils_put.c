@@ -6,7 +6,7 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 11:11:41 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/11 11:17:35 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/03/01 15:07:47 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putchar(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 int	ft_putstr(char *s)
@@ -24,51 +24,51 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	len = 0;
-	if(s == NULL)
+	if (s == NULL)
 	{
 		ft_putstr("(null)");
 		return (6);
 	}
 	if (s)
 	{
-		while(s[i] != '\0')
+		while (s[i] != '\0')
 		{
 			len += ft_putchar(s[i]);
 			i++;
 		}
 	}
-	return(len);
+	return (len);
 }
 
-int	ft_putstr_free(char *s)
+int	ft_putstr_free(char *str)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = 0;
-	if(s == NULL)
+	if (str == NULL)
 	{
 		ft_putstr("(null)");
 		return (6);
 	}
-	if (s)
+	if (str)
 	{
-		while(s[i] != '\0')
+		while (str[i] != '\0')
 		{
-			len += ft_putchar(s[i]);
+			len += ft_putchar(str[i]);
 			i++;
 		}
 	}
-    while (i >= 0)
-        s[i--] = '\0';
-	free(s);
-	return(len);
+	while (i >= 0)
+		str[i--] = '\0';
+	free(str);
+	return (len);
 }
 
-int ft_putnbr(long n, int *len)
+int	ft_putnbr(long n, int *len)
 {
-	if(n < 0)
+	if (n < 0)
 	{
 		n *= -1;
 		*len += ft_putchar('-');
@@ -76,12 +76,12 @@ int ft_putnbr(long n, int *len)
 	if (n)
 	{
 		if (n / 10)
-			ft_putnbr (n/10, len);
+			ft_putnbr (n / 10, len);
 		*len += ft_putchar (n % 10 + '0');
 	}
-	else 
+	else
 		*len += ft_putchar('0');
-	return(*len);
+	return (*len);
 }
 
 int	ft_putunbr(unsigned int n, int *len)
@@ -89,10 +89,10 @@ int	ft_putunbr(unsigned int n, int *len)
 	if (n)
 	{
 		if (n / 10)
-			ft_putunbr(n/10, len);
+			ft_putunbr (n / 10, len);
 		*len += ft_putchar(n % 10 + '0');
 	}
 	else
 		*len += ft_putchar('0');
-	return(*len);
+	return (*len);
 }

@@ -6,13 +6,13 @@
 /*   By: yaysu <yaysu@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:27:41 by yaysu             #+#    #+#             */
-/*   Updated: 2022/02/11 12:53:04 by yaysu            ###   ########.fr       */
+/*   Updated: 2022/03/01 16:01:52 by yaysu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char *convert_16x(unsigned int dec)
+char	*convert_16x(unsigned int dec)
 {
 	int		i;
 	int		kalan;
@@ -20,8 +20,9 @@ char *convert_16x(unsigned int dec)
 
 	i = 0;
 	str = malloc((sizeof(char)) * 100);
+	empty_malloc(str);
 	if (!str)
-		return(NULL);
+		return (NULL);
 	if (dec == 0)
 		str[i++] = '0';
 	while (dec != 0)
@@ -34,10 +35,10 @@ char *convert_16x(unsigned int dec)
 		dec = dec / 16;
 	}
 	str = ft_strrev(str);
-	return(str);
+	return (str);
 }
 
-char	 *convert_16x_upper(unsigned int dec)
+char	*convert_16x_upper(unsigned int dec)
 {
 	int		i;
 	int		kalan;
@@ -45,8 +46,9 @@ char	 *convert_16x_upper(unsigned int dec)
 
 	i = 0;
 	str = malloc((sizeof(char)) * 100);
+	empty_malloc(str);
 	if (!str)
-		return(NULL);
+		return (NULL);
 	if (dec == 0)
 		str[i++] = '0';
 	while (dec != 0)
@@ -59,5 +61,5 @@ char	 *convert_16x_upper(unsigned int dec)
 		dec = dec / 16;
 	}
 	str = ft_strrev(str);
-	return(str);
+	return (str);
 }

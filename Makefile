@@ -13,9 +13,6 @@ $(NAME) : ${OBJS}
 
 all : ${NAME}
 
-debug:
-	$(CC) -g -o ft_printf $(SRCS) 
-
 clean :
 	rm -f ${OBJS}
 
